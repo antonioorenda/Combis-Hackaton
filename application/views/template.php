@@ -104,7 +104,7 @@
                 </li>
                 
                 <li>
-                    <a href="<?php base_url() ?>home/logout">
+                    <a href="<?php base_url() ?>login/logout">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>

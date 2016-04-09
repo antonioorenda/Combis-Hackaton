@@ -4,81 +4,54 @@
         <h2>Unos podataka</h2>
     </div>
 </div>
-<div id="">
-    <div class="ibox-content">
-        <div class="row">
-        <div class="col-lg-12">
-            <div class="form-group col-lg-2">
-                <select name="bulkplan_country" class="form-control bulkplan_country" required>
-                        <option selected disabled style="display: none;">country</option>
-                </select>
-            </div>
-            <div class="form-group col-lg-2">
-                <select name="bulkplan_operator" class="form-control bulkplan_operator" required>                        
-                    <option selected disabled style="display:none;">operator</option>
-                    
-                </select>
-            </div>
-            <div class="form-group col-lg-2">
-                <select name="bulkplan_shortcode" class="form-control bulkplan_shortcode" required>
-                    <option style="display: none;" selected="" disabled="">shortcode</option>
-                    
-                </select>
-            </div>
-            <div class="form-group col-lg-2">
-                <select name="bulkplan_app" class="form-control bulkplan_app" required>
-                    <option style="display: none;" selected="" disabled="">application</option>
-                </select>
-            </div>
-            <div class="form-group col-lg-2">
-                <select name="bulkplan_key" class="form-control bulkplan_key" required>
-                    <option style="display: none;" selected="" disabled="">keyword</option>
-                    
-                </select>
-            </div>
-            <div class="col-lg-2">
-                <div class="form-group input-group" >
-                    <input style="z-index: 9999999;" name="bulkplan_date" placeholder="<?=date("Y/m/d", time())?>" class="form-control datepicker bulkplan_date" required/>
-                    <span class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                    </span>
-                </div> 
-            </div>
-            <div class="col-lg-2">
-                <div class="form-group input-group clockpicker" data-placement="bottom"  data-autoclose="true">
-                    <input type="text" class="form-control bulkplan_time" name="bulkplan_time" placeholder="<?=date('H:i');?>" required>
-                    <span class="input-group-addon">
-                        <i class="fa fa-clock-o"></i>
-                    </span>
-                </div>
-            </div>
-            <div class="form-group col-lg-2">
-                <input type="number" placeholder="amount" name="bulkplan_amount" class="form-control bulkplan_amount" required>
-            </div>
-            <div class="form-group col-lg-2">
-                <select name="bulkplan_endpoint" class="form-control bulkplan_endpoint" required>
-                    <option style="display: none;" selected="" disabled="">endpoint</option>
-                   
-                </select>
-            </div>
 
-            <!--value is message id-->
-            <div class="form-group col-lg-2">
-                <select name="bulkplan_shortname" class="form-control bulkplan_shortname" required>
-                    <option style="display: none;" selected="" disabled="">shortname</option>
-                    
-                </select>
-            </div>
-            <div  class="col-lg-2">
-                <button style="color: white; background-color: #1ab394;" class="btn btn-primary btn-rounded btn-md col-lg-12 form-control" id="massBulkSubmit" type="submit">Save</button>
-            </div>
+<div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>All form elements <small>With custom checbox and radion elements.</small></h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">Config option 1</a>
+                                    </li>
+                                    <li><a href="#">Config option 2</a>
+                                    </li>
+                                </ul>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content" style="display: block;">
+                            <form method="get" class="form-horizontal">
+                                <div class="form-group"><label class="col-sm-2 control-label">Normal</label>
 
-        </div>
-    </div>
-    <br/><br/>
+                                    <div class="col-sm-10"><input type="text" class="form-control"></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Help text</label>
+                                    <div class="col-sm-10"><input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Password</label>
 
-  </div>
-</div>
+                                    <div class="col-sm-10"><input type="password" class="form-control" name="password"></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Placeholder</label>
+
+                                    <div class="col-sm-10"><input type="text" placeholder="placeholder" class="form-control"></div>
+                                </div>
+                               
+                            </form>
+                        </div>
+                    </div>
+
 <br/>
 
 <script>
