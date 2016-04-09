@@ -1,3 +1,8 @@
+<?php
+    if (session_status() == PHP_SESSION_NONE) {
+        redirect("login");
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -32,14 +37,16 @@
                             <img alt="image" class="img-circle" src="<?php echo base_url(); ?>assets/img/profile_small.jpg" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php $user->ime . " " . $user->prezime ?></strong>
-                             </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $user->ime . " " . $user->prezime ?></strong>
+                             </span> <span class="text-muted text-xs block"><?= $user->naziv ?> <b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.html">Profile</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
                                 <li><a href="mailbox.html">Mailbox</a></li>
                                 <li class="divider"></li>
-                                <li><a href="login.html">Logout</a></li>
+                                <li>
+                                    <a id="logout_submit" href="<?php base_url() ?>home/logout">Logout</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="logo-element">
@@ -75,7 +82,7 @@
                 </li>
                 
                 <li>
-                    <a href="login.html">
+                    <a href="<?php base_url() ?>home/logout">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>
