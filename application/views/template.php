@@ -53,12 +53,14 @@
                             IN+
                         </div>
                     </li>
+                    
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li class="active"><a href="index.html">Dashboard v.1</a></li>
-                        </ul>
+                        <a href="<?php base_url() ?>home"><i class="fa fa-th-large"></i> <span class="nav-label">Početna</span> </a>
                     </li>
+                    <li>
+                        <a href="<?php base_url() ?>home"><i class="fa fa-edit"></i> <span class="nav-label">Unesi podatke</span> </a>
+                    </li>
+                    
                     
                 </ul>
 

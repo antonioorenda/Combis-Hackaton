@@ -4,10 +4,14 @@ class Home extends CI_Controller {
 
     public function index(){
         
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
+        if (session_status() != PHP_SESSION_NONE) {
+            
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
         
-        $user = $this->db->query("SELECT * FROM korisnici, uloge WHERE korisnicko_ime = '$username' and lozinka = '$password' AND korisnici.uloga = uloge.id")->result()[0];
+            $user = $this->db->query("SELECT * FROM korisnici, uloge WHERE korisnicko_ime = '$username' and lozinka = '$password' AND korisnici.uloga = uloge.id")->result()[0];
+        }
+        
         
         if(!empty($user)){
             
