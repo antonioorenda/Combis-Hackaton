@@ -1,3 +1,5 @@
+<?php var_dump($_SESSION); ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +31,7 @@
                 </p>
                 <p>Login in to see it in action.</p>
                  <?php echo validation_errors(); ?>    
-                <form action="<?php echo base_url(); ?>home" method="post" accept-charset="utf-8" class="m-t" role="form">
+                <form action="<?php echo base_url(); ?>login/enter" method="post" accept-charset="utf-8" class="m-t" role="form">
                     <div class="form-group">
                         <input type="text" id="login" name="username" class="form-control" placeholder="Username" required="">
 

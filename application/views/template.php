@@ -1,4 +1,5 @@
 <?php
+    var_dump($_SESSION);
     if (session_status() == PHP_SESSION_NONE) {
         redirect("login");
     }
