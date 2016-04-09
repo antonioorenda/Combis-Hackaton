@@ -9,7 +9,7 @@ class Uljar extends CI_Controller {
         $tomorrow = strtotime('+1 day', $today);
                 
         $datatable = $this->db->query("SELECT * FROM predbiljezbe JOIN kooperanti ON kooperanti.id = predbiljezbe.kooperant WHERE predbiljezbe.vrijeme BETWEEN $today and $tomorrow")->result();
-                      
+                
         $data['datatable'] = $datatable;
                 
         $uljar = $this->load->view("uljar", $data, true);
