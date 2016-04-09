@@ -1,6 +1,6 @@
 <?php
     var_dump($_SESSION);
-    if (session_status() == PHP_SESSION_NONE) {
+    if (!array_key_exists ('user', $_SESSION)) {
         redirect("login");
     }
 ?>
