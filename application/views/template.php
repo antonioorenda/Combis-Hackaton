@@ -13,6 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Olive manager</title>
+    
+    <script src="<?php echo base_url(); ?>assets/js/jquery-2.1.1.js"></script>
 
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -25,6 +27,28 @@
 
     <link href="<?php echo base_url(); ?>assets/css/animate.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
+    
+    <!--clockpicker-->
+    <link href="<?php echo base_url(); ?>assets/clockpicker/bootstrap-clockpicker.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/clockpicker/jquery-clockpicker.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/clockpicker/jquery-clockpicker.min.css" rel="stylesheet">
+
+    <link href="<?php echo base_url(); ?>assets/clockpicker/clockpicker.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/clockpicker/standalone.css" rel="stylesheet">
+
+    <script src="<?php echo base_url(); ?>assets/clockpicker/bootstrap-clockpicker.js"></script>
+    <script src="<?php echo base_url(); ?>assets/clockpicker/bootstrap-clockpicker.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/clockpicker/jquery-clockpicker.js"></script>
+    <script src="<?php echo base_url(); ?>assets/clockpicker/jquery-clockpicker.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/clockpicker/clockpicker.js"></script>
+    <!--end of clockpicker-->
+
+    <!--datepicker-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <link href="<?php echo base_url(); ?>assets/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 
 </head>
 
@@ -38,8 +62,8 @@
                             <img alt="image" class="img-circle" src="<?php echo base_url(); ?>assets/img/profile_small.jpg" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $user->ime . " " . $user->prezime ?></strong>
-                             </span> <span class="text-muted text-xs block"><?= $user->naziv ?> <b class="caret"></b></span> </span> </a>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $_SESSION['user']->ime . " " . $_SESSION['user']->prezime ?></strong>
+                             </span> <span class="text-muted text-xs block"><?= $_SESSION['user']->naziv ?> <b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.html">Profile</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
@@ -110,7 +134,7 @@
     </div>
 
     <!-- Mainly scripts -->
-    <script src="<?php echo base_url(); ?>assets/js/jquery-2.1.1.js"></script>
+    
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
