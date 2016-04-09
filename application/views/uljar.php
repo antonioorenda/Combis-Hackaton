@@ -17,6 +17,7 @@
                             <th>Kooperant</th>
                             <th>Vrijeme</th>
                             <th>Količina</th>
+                            <th>Randman</th>
                             <th>Akcije</th>
                         </tr>
                         </thead>
@@ -30,10 +31,11 @@
                             <tr style="text-align: center;">
                                 <td><?php echo $row->ime . " " . $row->prezime ?></td>
                                 <td><?= date('H:i:s', $row->vrijeme) ?></td>
-                                <td><?= $row->kolicina ?></td>
+                                <td><?= $row->kolicina . " Kg" ?></td>
+                                <td><?php if($row->randman == 0) echo 'Unesite podatke'; else echo $row->randman . "%" ?></td>
                                 
                                 <td>
-                                    
+                                   
                                     <div class="text-center">
                                         <a data-toggle="modal" class="" href="#modal-form-a<?= $i ?>">Prije</a>
                                         /
@@ -45,16 +47,21 @@
                                             <div class="modal-content">
                                                 <div class="modal-body">
                                                     <div class="row">
-                                                        <div class="col-sm-12"><h3 class="m-t-none m-b">Sign in</h3>
+                                                        <div class="col-sm-12"><h3 class="m-t-none m-b">Unos prije prerade</h3>
 
-                                                            <p>Sign in today for more expirience.</p>
+                                                            <!--<p>Sign in today for more expirience.</p>-->
 
-                                                            <form role="form">
-                                                                <div class="form-group"><label>Email</label> <input type="email" placeholder="Enter email" class="form-control"></div>
-                                                                <div class="form-group"><label>Password</label> <input type="password" placeholder="Password" class="form-control"></div>
+                                                            <form role="form" method="POST" action="<?= base_url() ?>uljar/prije">
+                                                                <input name="kooperant" type="hidden" value="<?= $row->pravi_koop ?>">
+                                                                <div class="form-group"><label>Kvaliteta maslina</label> <input name="kvaliteta_prije" type="text" placeholder="Dobro / Loše" class="form-control"></div>
+                                                                <div class="form-group"><label>Količina maslina</label> <input name="kolicina_prije" type="text" placeholder="Unesite količinu maslina u kilogramima" class="form-control"></div>
+                                                                <!--<div class="form-group"><label>Datum prije prerade maslina</label> <input type="text" placeholder="<?=date("d/m/Y", time())?>" class="form-control datepicker"></div>-->
+                                                                <div class="form-group">
+                                                                    <label>Vrijeme prije prerade maslina</label> 
+                                                                    <input name="vrijeme_prije" type="text" id="single-input" placeholder="<?=date('H:i');?>" class="form-control single-input">
+                                                                </div>
                                                                 <div>
-                                                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Log in</strong></button>
-                                                                    <label> <input type="checkbox" class="i-checks"> Remember me </label>
+                                                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Save</strong></button>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -69,16 +76,21 @@
                                             <div class="modal-content">
                                                 <div class="modal-body">
                                                     <div class="row">
-                                                        <div class="col-sm-12"><h3 class="m-t-none m-b">Sign in</h3>
+                                                        <div class="col-sm-12"><h3 class="m-t-none m-b">Unos poslije obrade</h3>
 
-                                                            <p>Sign in today for more expirience.</p>
+                                                            <!--<p>Sign in today for more expirience.</p>-->
 
-                                                            <form role="form">
-                                                                <div class="form-group"><label>Email</label> <input type="email" placeholder="Enter email" class="form-control"></div>
-                                                                <div class="form-group"><label>Password</label> <input type="password" placeholder="Password" class="form-control"></div>
+                                                            <form role="form" method="POST" action="<?= base_url() ?>uljar/poslije">
+                                                                <input name="kooperant" type="hidden" value="<?= $row->pravi_koop ?>">
+                                                                <div class="form-group"><label>Kvaliteta ulja</label> <input name="kvaliteta_nakon" type="text" placeholder="Djevičansko / Ekstra djevičansko" class="form-control"></div>
+                                                                <div class="form-group"><label>Količina ulja</label> <input name="kolicina_nakon" type="text" placeholder="Unesite količinu ulja u kilogramima" class="form-control"></div>
+                                                                <!--<div class="form-group"><label>Datum nakon prerade maslina</label> <input type="text" placeholder="<?=date("d/m/Y", time())?>" class="form-control datepicker"></div>-->
+                                                                <div class="form-group">
+                                                                    <label>Vrijeme nakon prerade maslina</label> 
+                                                                    <input name="vrijeme_nakon" type="text" id="single-input" placeholder="<?=date('H:i');?>" class="form-control single-input">
+                                                                </div>
                                                                 <div>
-                                                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Log in</strong></button>
-                                                                    <label> <input type="checkbox" class="i-checks"> Remember me </label>
+                                                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Save</strong></button>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -101,7 +113,7 @@
                     </div>
                 </div>
 
-<div class="ibox float-e-margins">
+<!--<div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <h5>Podaci o preradi</h5>
                         </div>
@@ -114,7 +126,7 @@
                         
                         <div class="ibox-content" style="display: block;">
                             <form method="get" class="form-horizontal">
-                                <div class="form-group"><label class="col-sm-2 control-label">Količina maslina (KG)</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Količina maslina (Kg)</label>
 
                                     <div class="col-sm-10"><input type="text" class="form-control"></div>
                                 </div>
@@ -136,14 +148,21 @@
                                
                             </form>
                         </div>
-                    </div>
+                    </div>-->
 
 <br/>
 
 <script>
     $(document).ready(function(){
-        $('.datepicker').datepicker({dateFormat: 'yy/mm/dd'});
-        $('.clockpicker').clockpicker();
+        $('.datepicker').datepicker({dateFormat: 'mm/dd/yy'});
+        
+        $('.single-input').clockpicker({
+            placement: 'bottom',
+            align: 'left',
+            autoclose: true,
+            'default': 'now'
+        });
+        
         $('.dataTables-example').dataTable({
                 "responsive": true,
                 "dom": 'T<"clear">lfrtip',
@@ -153,7 +172,11 @@
             });
     });
 </script>
-<style>
+<style>   
+    .clockpicker-popover {
+        z-index: 999999;
+    }
+    
     body.DTTT_Print {
         background: #fff;
 

@@ -1,5 +1,4 @@
 <?php
-    var_dump($_SESSION);
     if (!array_key_exists ('user', $_SESSION)) {
         redirect("login");
     }
@@ -73,7 +72,7 @@
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $_SESSION['user']->ime . " " . $_SESSION['user']->prezime ?></strong>
-                             </span> <span class="text-muted text-xs block"><?= $_SESSION['user']->naziv ?> <b class="caret"></b></span> </span> </a>
+                             </span> <span class="text-muted text-xs block"><?= ucfirst($_SESSION['user']->naziv) ?> <b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.html">Profile</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
