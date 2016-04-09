@@ -70,7 +70,7 @@
                                 <li><a href="mailbox.html">Mailbox</a></li>
                                 <li class="divider"></li>
                                 <li>
-                                    <a id="logout_submit" href="<?php base_url() ?>home/logout">Logout</a>
+                                    <a id="logout_submit" href="<?php base_url() ?>login/logout">Logout</a>
                                 </li>
                             </ul>
                         </div>
@@ -79,12 +79,7 @@
                         </div>
                     </li>
                     
-                    <li class="active">
-                        <a href="<?php base_url() ?>home"><i class="fa fa-th-large"></i> <span class="nav-label">Početna</span> </a>
-                    </li>
-                    <li>
-                        <a href="<?php base_url() ?>home"><i class="fa fa-edit"></i> <span class="nav-label">Unesi podatke</span> </a>
-                    </li>
+                    <?php $this->load->view("menu/".$_SESSION['user']->naziv.".php");?>
                     
                     
                 </ul>
