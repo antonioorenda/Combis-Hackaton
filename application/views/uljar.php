@@ -7,7 +7,7 @@
 
 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Podaci o kooperantima</h5>
+                        <h5>Raspored prerade</h5>
                     </div>
                     <div class="ibox-content">
 
@@ -61,7 +61,7 @@
                                                                     <input name="vrijeme_prije" type="text" id="single-input" placeholder="<?=date('H:i');?>" class="form-control single-input">
                                                                 </div>
                                                                 <div>
-                                                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Save</strong></button>
+                                                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Spremi</strong></button>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -90,7 +90,7 @@
                                                                     <input name="vrijeme_nakon" type="text" id="single-input" placeholder="<?=date('H:i');?>" class="form-control single-input">
                                                                 </div>
                                                                 <div>
-                                                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Save</strong></button>
+                                                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Spremi</strong></button>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -112,43 +112,6 @@
 
                     </div>
                 </div>
-
-<!--<div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Podaci o preradi</h5>
-                        </div>
-    
-                        <div class="ibox-content" style="display: block;">
-                           
-                            
-                            
-                        </div>
-                        
-                        <div class="ibox-content" style="display: block;">
-                            <form method="get" class="form-horizontal">
-                                <div class="form-group"><label class="col-sm-2 control-label">Količina maslina (Kg)</label>
-
-                                    <div class="col-sm-10"><input type="text" class="form-control"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Kvaliteta maslina</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Password</label>
-
-                                    <div class="col-sm-10"><input type="password" class="form-control" name="password"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Placeholder</label>
-
-                                    <div class="col-sm-10"><input type="text" placeholder="placeholder" class="form-control"></div>
-                                </div>
-                               
-                            </form>
-                        </div>
-                    </div>-->
 
 <br/>
 

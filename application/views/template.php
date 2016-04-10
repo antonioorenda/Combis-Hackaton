@@ -73,23 +73,13 @@
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $_SESSION['user']->ime . " " . $_SESSION['user']->prezime ?></strong>
                              </span> <span class="text-muted text-xs block"><?= ucfirst($_SESSION['user']->naziv) ?> <b class="caret"></b></span> </span> </a>
-                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a href="profile.html">Profile</a></li>
-                                <li><a href="contacts.html">Contacts</a></li>
-                                <li><a href="mailbox.html">Mailbox</a></li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a id="logout_submit" href="<?php base_url() ?>login/logout">Logout</a>
-                                </li>
-                            </ul>
                         </div>
                         <div class="logo-element">
-                            IN+
+                            Oli
                         </div>
                     </li>
                     
                     <?php $this->load->view("menu/".$_SESSION['user']->naziv.".php");?>
-                    
                     
                 </ul>
 
@@ -103,18 +93,18 @@
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
             <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
                 <div class="form-group">
-                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                    <input type="text" placeholder="Pretraži ovu stranicu..." class="form-control" name="top-search" id="top-search">
                 </div>
             </form>
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Welcome to Olive Manager</span>
+                    <span class="m-r-sm text-muted welcome-message">Dobrodošli u Olive Manager</span>
                 </li>
                 
                 <li>
                     <a href="<?php base_url() ?>login/logout">
-                        <i class="fa fa-sign-out"></i> Log out
+                        <i class="fa fa-sign-out"></i> Odjava
                     </a>
                 </li>
             </ul>
@@ -316,5 +306,6 @@
 
         });
     </script>
+    
 </body>
 </html>

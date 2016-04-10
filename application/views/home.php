@@ -1,87 +1,99 @@
 
-<div class="row  border-bottom white-bg dashboard-header">
-
-        <div class="col-sm-3">
-            <h2>Welcome <?= $user->ime ?></h2>
-            <small>You have 42 messages and 6 notifications.</small>
-            <ul class="list-group clear-list m-t">
-                <li class="list-group-item fist-item">
-                    <span class="pull-right">
-                        09:00 pm
-                    </span>
-                    <span class="label label-success">1</span> Please contact me
-                </li>
-                <li class="list-group-item">
-                    <span class="pull-right">
-                        10:16 am
-                    </span>
-                    <span class="label label-info">2</span> Sign a contract
-                </li>
-                <li class="list-group-item">
-                    <span class="pull-right">
-                        08:22 pm
-                    </span>
-                    <span class="label label-primary">3</span> Open new shop
-                </li>
-                <li class="list-group-item">
-                    <span class="pull-right">
-                        11:06 pm
-                    </span>
-                    <span class="label label-default">4</span> Call back to Sylvia
-                </li>
-                <li class="list-group-item">
-                    <span class="pull-right">
-                        12:00 am
-                    </span>
-                    <span class="label label-primary">5</span> Write a letter to Sandra
-                </li>
-            </ul>
-        </div>
-        <div class="col-sm-6">
-            <div class="flot-chart dashboard-chart">
-                <div class="flot-chart-content" id="flot-dashboard-chart"></div>
-            </div>
-            <div class="row text-left">
-                <div class="col-xs-4">
-                    <div class=" m-l-md">
-                    <span class="h4 font-bold m-t block">$ 406,100</span>
-                    <small class="text-muted m-b block">Sales marketing report</small>
-                    </div>
-                </div>
-                <div class="col-xs-4">
-                    <span class="h4 font-bold m-t block">$ 150,401</span>
-                    <small class="text-muted m-b block">Annual sales revenue</small>
-                </div>
-                <div class="col-xs-4">
-                    <span class="h4 font-bold m-t block">$ 16,822</span>
-                    <small class="text-muted m-b block">Half-year revenue margin</small>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="statistic-box">
-            <h4>
-                Project Beta progress
-            </h4>
-            <p>
-                You have two project with not compleated task.
-            </p>
-                <div class="row text-center">
-                    <div class="col-lg-6">
-                        <canvas id="polarChart" width="80" height="80"></canvas>
-                        <h5 >Kolter</h5>
-                    </div>
-                    <div class="col-lg-6">
-                        <canvas id="doughnutChart" width="78" height="78"></canvas>
-                        <h5 >Maxtor</h5>
-                    </div>
-                </div>
-                <div class="m-t">
-                    <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
-                </div>
-
-            </div>
-        </div>
-
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-8">
+        <h2>Dobrodošao <?php echo $_SESSION['user']->ime ?></h2>
+    </div>
 </div>
+
+<div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Izvještaj</h5>
+                    </div>
+                    <div class="ibox-content">
+                        
+                        <form action="<?= base_url() ?>administrator" method="POST">
+                            
+                            <div class="form-group">
+                                <div class="input-group input-daterange">
+                                    <span class="input-group-addon">Početni datum: </span>
+                                    <input class="form-control datepicker" name="datum1">
+                                </div>
+                            </div>
+
+                             <div class="form-group">
+                                <div class="input-group input-daterange">
+                                    <span class="input-group-addon">Završni datum: </span>
+                                    <input class="form-control datepicker" name="datum2">
+                                </div>
+                            </div>
+
+                             <div class="form-group">
+                                <div class="input-group">
+                                    <button type="submit" class=" btn btn-primary">Kreiraj izvještaj!</button>
+                                </div>
+                            </div>
+                            
+                        </form>    
+                        
+                        <?php
+                            if(isset($kilogrami)) echo $kilogrami;
+                        ?>
+                            
+                    </div>
+                </div>
+
+<script>
+    $(document).ready(function(){
+        $('.datepicker').datepicker({dateFormat: 'dd/mm/yy'});
+        
+        $('.single-input').clockpicker({
+            placement: 'top',
+            align: 'left',
+            autoclose: true,
+            'default': 'now'
+        });
+        
+        $('.dataTables-example').dataTable({
+                "responsive": true,
+                "dom": 'T<"clear">lfrtip',
+                "tableTools": {
+                    "sSwfPath": "<?php echo base_url() ?>assets/js/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
+                }
+            });
+    });
+</script>
+
+<style>   
+    .clockpicker-popover {
+        z-index: 999999;
+    }
+    
+    body.DTTT_Print {
+        background: #fff;
+
+    }
+    .DTTT_Print #page-wrapper {
+        margin: 0;
+        background:#fff;
+    }
+
+    button.DTTT_button, div.DTTT_button, a.DTTT_button {
+        border: 1px solid #e7eaec;
+        background: #fff;
+        color: #676a6c;
+        box-shadow: none;
+        padding: 6px 8px;
+    }
+    button.DTTT_button:hover, div.DTTT_button:hover, a.DTTT_button:hover {
+        border: 1px solid #d2d2d2;
+        background: #fff;
+        color: #676a6c;
+        box-shadow: none;
+        padding: 6px 8px;
+    }
+
+    .dataTables_filter label {
+        margin-right: 5px;
+
+    }
+</style>

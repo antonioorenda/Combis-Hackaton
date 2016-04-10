@@ -1,4 +1,3 @@
-<?php var_dump($_SESSION); ?>
 
 <!DOCTYPE html>
 <html>
@@ -25,19 +24,19 @@
                     <h4 class="logo-name">Oli</h4>
                 </div>
                 
-                <h3>Welcome to Olive Manager</h3>
+                <h3>Dobrodošli u Olive Manager</h3>
                 <p>
-                    Everything in one place!
+                    Sve na jednom mjestu!
                 </p>
-                <p>Login in to see it in action.</p>
-                 <?php echo validation_errors(); ?>    
+                <p>Ulogirajte se i iskusite čaroliju.</p>
+                 <?php //echo validation_errors(); ?>    
                 <form action="<?php echo base_url(); ?>login/enter" method="post" accept-charset="utf-8" class="m-t" role="form">
                     <div class="form-group">
-                        <input type="text" id="login" name="username" class="form-control" placeholder="Username" required="">
+                        <input type="text" id="login" name="username" class="form-control" placeholder="Korisničko ime" required="">
 
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password" required="">
+                        <input type="password" name="password" class="form-control" placeholder="Lozinka" required="">
 
                     </div>
 
@@ -45,9 +44,9 @@
                         <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
                     </div>
 
-                    <a href="<?php echo base_url(); ?>forgot_password"><small>Forgot password?</small></a>
-                    <p class="text-muted text-center"><small>Do not have an account?</small></p>
-                    <a class="btn btn-sm btn-white btn-block" href="<?php echo base_url(); ?>users_creation/add">Create an account</a>
+                    <a href="<?php echo base_url(); ?>forgot_password"><small>Zaboravili ste password?</small></a>
+                    <p class="text-muted text-center"><small>Nemate korisnički račun?</small></p>
+                    <a class="btn btn-sm btn-white btn-block" href="<?php echo base_url(); ?>users_creation/add">Izradite korisnički račun</a>
                 </form>
                 <p class="m-t"> <small>DATA Team &copy; 2016</small> </p>
             </div>

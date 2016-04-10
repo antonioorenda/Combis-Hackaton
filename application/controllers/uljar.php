@@ -26,7 +26,7 @@ class Uljar extends CI_Controller {
         
         $vrijeme = explode(":", $vrijeme_prije);
         
-        $timestamp = mktime($vrijeme[0], $vrijeme[1], 0, date("n"), date("j"), date("Y"));
+        $timestamp = mktime((int)$vrijeme[0], (int)$vrijeme[1], 0, date("n"), date("j"), date("Y"));
         
         $this->db->query("INSERT INTO prerada_maslina(kvaliteta_maslina, kolicina_maslina, pocetak_obrade, kooperant) VALUES('$kvaliteta_prije', '$kolicina_prije', '$timestamp', $id)");
         
@@ -42,13 +42,11 @@ class Uljar extends CI_Controller {
         
         $vrijeme = explode(":", $vrijeme_nakon);
         
-        $timestamp = mktime($vrijeme[0], $vrijeme[1], 0, date("n"), date("j"), date("Y"));
+        $timestamp = mktime((int)$vrijeme[0], (int)$vrijeme[1], 0, date("n"), date("j"), date("Y"));
         
-        $kolicina_maslina = $this->db->query("SELECT kolicina_maslina FROM prerada_maslina WHERE kooperant = $id")->result[0];
+        $kolicina_maslina = $this->db->query("SELECT kolicina_maslina FROM prerada_maslina WHERE kooperant = $id")->result()[0]->kolicina_maslina;
         
-        
-        
-        $randman = (int)($kolicina_nakon/$kolicina_maslina);
+        $randman = ($kolicina_nakon/$kolicina_maslina) * 100;
                 
         $this->db->query("UPDATE prerada_maslina SET kvaliteta_ulja = '$kvaliteta_nakon', kolicina_ulja = '$kolicina_nakon', kraj_obrade = '$timestamp', randman = '$randman' WHERE kooperant = $id");
         

@@ -19,13 +19,18 @@ class Login extends CI_Controller {
             
             $data['user'] = $user;
             
-            $_SESSION['user'] = $user;     
+            $_SESSION['user'] = $user;
             
-            redirect('home');
-            /*
-            $home = $this->load->view("home", $data, true);
-            $data["body"] = $home;
-            $this->load->view("template", $data);*/
+            if($_SESSION['user']->naziv == "uljar"){
+                redirect("uljar");
+            }
+            elseif ($_SESSION['user']->naziv == "prijevoznik") {
+                redirect("prijevoznik");
+            }
+            else{
+                redirect('home');
+            }
+           
         }
         else{
             //TODO error prikaz
