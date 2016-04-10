@@ -8,9 +8,27 @@
 <div class="ibox float-e-margins">
     <div class="ibox-content">
         
-        <input id="address" type="textbox" value="Sydney, NSW">
+<!--        <input id="address" type="textbox" value="Sydney, NSW">
         <input id="address2" type="textbox" value="Sydney, NSW">
-        <input id="submit" type="button" value="Geocode">
+        <input id="submit" type="button" value="Geocode">-->
+        
+        <div class="form-group">
+            <select name="kooperant" class="form-control bulkplan_country" required>
+
+                <option selected disabled style="display: none;">Odaberite rutu</option>
+
+                <?php
+                $brojac = 1;
+                foreach($rute as $ruta){
+                ?>
+                    <option value="37.772,-122.214$21.291,-157.821$-18.142,178.431"><?php echo $brojac; ?>. ruta</option>
+                <?php 
+                $brojac++;
+                }
+                ?>
+                
+            </select>
+        </div>
 
         <div id="map"></div>
 

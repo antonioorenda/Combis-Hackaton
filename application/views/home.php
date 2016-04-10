@@ -34,11 +34,57 @@
                             </div>
                             
                         </form>    
+                       
+                        <br />
                         
                         <?php
-                            if(isset($kilogrami)) echo $kilogrami;
-                        ?>
-                            
+                       if(isset($kilogrami)){
+                       ?>
+                        
+                       <div class="skill">
+                            <div class="progress-wrap">
+                                    <h3>Količina prerađenih maslina</h3>
+                                    <div class="progress">
+                                      <div class="progress-bar  color1" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                            <span class="bar-width"><?= $kilogrami ?> kilograma</span>
+                                      </div>
+
+                                    </div>
+                            </div>
+
+                            <div class="progress-wrap">
+                                    <h3>Vrijeme potrebno za preradu</h3>
+                                    <div class="progress">
+                                      <div class="progress-bar  color1" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+                                            <span class="bar-width"><?= $minute ?> minuta</span>
+                                      </div>
+
+                                    </div>
+                            </div>
+
+                            <div class="progress-wrap">
+                                    <h3>Ukupno litara</h3>
+                                    <div class="progress">
+                                      <div class="progress-bar color2" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                       <span class="bar-width"><?= $litre ?> litara</span>
+                                      </div>
+                                    </div>
+                            </div>
+                           
+                           <div class="progress-wrap">
+                                    <h3>Prinos maslina</h3>
+                                    <div class="progress">
+                                      <div class="progress-bar color2" role="progressbar" aria-valuenow="<?= (int)(($litre/$kilogrami)*100) ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= (int)(($litre/$kilogrami)*100) ?>%">
+                                       <span class="bar-width"><?= (int)(($litre/$kilogrami)*100) ?> %</span>
+                                      </div>
+                                    </div>
+                            </div>
+                    </div>
+                          
+                    <?php
+                    }
+                    ?>    
+                        
                     </div>
                 </div>
 
